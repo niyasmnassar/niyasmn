@@ -386,7 +386,7 @@ export default function Portfolio() {
         .exp-company { font-family: 'Syne', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: #666; margin-bottom: 16px; }
         .exp-desc { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 300; line-height: 1.65; color: #7a736c; }
 
-        .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; background: rgba(184,168,138,0.06); }
+        .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(184,168,138,0.06); }
         .proj-card { background: #080808; padding: 36px 32px; border: 0.5px solid transparent; transition: border-color 0.3s, background 0.3s; cursor: pointer; text-decoration: none; display: block; color: inherit; }
         .proj-card:hover { border-color: rgba(184,168,138,0.25); background: #0f0f0d; }
         .proj-tag { font-family: 'Syne', sans-serif; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: #b8a88a; border: 0.5px solid rgba(184,168,138,0.25); display: inline-block; padding: 4px 10px; margin-bottom: 16px; }
@@ -404,9 +404,13 @@ export default function Portfolio() {
         .btn-download:not(:disabled) .dl-icon { animation: dlBounce 1.2s ease-in-out infinite; }
         .nav-dl { font-family: 'Syne', sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; padding: 8px 18px; border: 0.5px solid #b8a88a; color: #b8a88a; background: transparent; cursor: pointer; transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 6px; }
         .nav-dl:hover { background: #b8a88a; color: #080808; }
+        .footer { border-top: 0.5px solid rgba(184,168,138,0.1); padding: 32px 10%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: #080808; }
         .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #b8a88a; }
-        .footer-info { font-family: 'Syne', sans-serif; font-size: 11px; color: #444; letter-spacing: 0.1em; }
+        .footer-info { font-family: 'Syne', sans-serif; font-size: 11px; color: #555; letter-spacing: 0.1em; }
 
+        @media (max-width: 900px) {
+          .proj-grid { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 700px) {
           .nav { padding: 16px 24px; }
           .nav-links { display: none; }
@@ -414,7 +418,8 @@ export default function Portfolio() {
           .hero-content { padding: 0 24px; }
           .hero-num { display: none; }
           .exp-grid { grid-template-columns: 1fr; }
-          .footer { flex-direction: column; gap: 12px; text-align: center; }
+          .proj-grid { grid-template-columns: 1fr; }
+          .footer { flex-direction: column; align-items: flex-start; gap: 10px; padding: 28px 24px; }
         }
       `}</style>
 
